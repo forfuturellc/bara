@@ -1,0 +1,17 @@
+language: java
+jdk:
+- oraclejdk8
+- openjdk8
+deploy:
+  provider: openshift
+  user: mugo@forfuture.co.ke
+  password:
+    secure: auQMc8NexctX4X/o2UqOYFZBqBxP9zOBdPB2rs0Mz1nXkyE9QFo5Tf0vuPztIMnT98vyCIAco8s/V2sUbswARiTJov+lbfWo2unER8+wksf0XZnvqa8wodxQ5BvDSCBbWMgqwNvOZN+EohUpBrWtDozdOcwcJG+OwkIqwSbLue0=
+  app: tns
+  domain: forfutureco
+  on:
+    repo: forfuture-dev/bara
+    branch: develop
+
+# deploying development builds to app `tns`. Production builds will be
+# deployed to another application later.

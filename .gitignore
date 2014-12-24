@@ -1,0 +1,9 @@
+# maven output directory
+target/
+
+# Build copied from target
+webapps/*
+
+# IntelliJ IDEA specific files/directories
+.idea/
+*.iml
