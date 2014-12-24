@@ -5,6 +5,9 @@ jdk:
 - oraclejdk7
 - openjdk7
 
+addons:
+  ssh_known_hosts: tns-forfutureco.rhcloud.com
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_54cb58de864e_key -iv $encrypted_54cb58de864e_iv
   -in .travis/.deploy.txt.enc -out .travis/.deploy.txt -d
