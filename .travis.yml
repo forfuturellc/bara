@@ -14,6 +14,7 @@ before_install:
 
 after_success:
 - chmod 600 .travis/.deploy.txt
+- eval "$(ssh-agent)"
 - ssh-add .travis/.deploy.txt
 - git remote add deploy ssh://549aeee75973cad4070000fe@tns-forfutureco.rhcloud.com/~/git/tns.git/
 - mvn clean install -Popenshift
