@@ -1,0 +1,5 @@
+# site build directory
+_site/
+
+# sass cache
+.sass-cache/
