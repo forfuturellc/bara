@@ -1,16 +1,20 @@
 language: java
 jdk:
 - oraclejdk8
-deploy:
-  provider: openshift
-  user: mugo@forfuture.co.ke
-  password:
-    secure: auQMc8NexctX4X/o2UqOYFZBqBxP9zOBdPB2rs0Mz1nXkyE9QFo5Tf0vuPztIMnT98vyCIAco8s/V2sUbswARiTJov+lbfWo2unER8+wksf0XZnvqa8wodxQ5BvDSCBbWMgqwNvOZN+EohUpBrWtDozdOcwcJG+OwkIqwSbLue0=
-  app: tns
-  domain: forfutureco
-  on:
-    repo: forfuture-dev/bara
-    branch: develop
+- oraclejdk7
+- openjdk7
 
-# deploying development builds to app `tns`. Production builds will be
-# deployed to another application later.
+before_install:
+- openssl aes-256-cbc -K $encrypted_54cb58de864e_key -iv $encrypted_54cb58de864e_iv
+  -in .travis/.deploy.txt.enc -out .travis/.deploy.txt -d
+
+after_success:
+- chmod 600 .travis/.deploy.txt
+- ssh-add .travis/.deploy.txt
+- git remote add deploy ssh://549aeee75973cad4070000fe@tns-forfutureco.rhcloud.com/~/git/tns.git/
+- mvn clean install -Popenshift
+- git rm -r src pom.xml
+- git add webapps
+- command -v date && COMMIT="DEPLOYED: `date`" || "DEPLOYED!!!"
+- git commit -m "New Deployment: $DATETIME"
+- git push deploy --force

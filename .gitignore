@@ -4,6 +4,9 @@ target/
 # Build copied from target
 webapps/*
 
+# deploy keys
+.travis/*.txt
+
 # IntelliJ IDEA specific files/directories
 .idea/
 *.iml
