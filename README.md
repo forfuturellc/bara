@@ -1,7 +1,11 @@
 bara
 ====
 
-A Transport Notification Service
+__A Transport Notification Service__
 
-This branch holds data for the Service's documentation site. The site is
- built using [jekyll](https://jekyllrb.com).
+This branch holds data for the Service's [documentation site][site]. The
+ site is built using [jekyll][jekyll].
+
+
+[jekyll]:https://jekyllrb.com
+[site]:https://github.com/forfuture-dev/bara
