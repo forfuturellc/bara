@@ -5,8 +5,21 @@ package  com.forfuture.data;
  *  classifying its transport system into well-defined routes
  */
 
-public interface Country {
-    int getId();
-    String getName();
-    String setName();
+public class Country {
+    private int id;
+    private String name;
+
+    public Country(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() { return id; }
+
+    public String getName() { return name; }
+
+    public String setName(String name) {
+        this.name = name;
+        return name;
+    }
 }

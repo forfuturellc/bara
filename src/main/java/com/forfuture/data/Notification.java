@@ -12,6 +12,14 @@ import java.util.Date;
 
 public class Notification {
     private int id;
-    private Integer route;
-    private Date date;
+    private Route route;
+    //private Date date;
+
+    public Notification(int id, Route route) {
+        this.id = id;
+        this.route = route;
+    }
+
+    public int getId() { return id; }
+    public Route getRoute() { return route; }
 }

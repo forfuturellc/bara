@@ -6,6 +6,6 @@ package com.forfuture.data.transport;
  */
 
 public abstract interface Transport {
-    int getId();
-    String getName();
+    public int getId();
+    public String getName();
 }
