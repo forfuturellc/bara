@@ -7,5 +7,5 @@ This branch holds data for the Service's [documentation site][site]. The
  site is built using [jekyll][jekyll].
 
 
-[jekyll]:https://jekyllrb.com
+[jekyll]:http://jekyllrb.com
 [site]:https://github.com/forfuture-dev/bara

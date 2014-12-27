@@ -5,6 +5,9 @@ permalink: /docs/api/countries/
 
 ## countries
 
+__All__ the routes registered with the Service are considered with these
+ endpoints.
+
 ```
 GET /countries
 ```

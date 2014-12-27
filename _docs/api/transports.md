@@ -5,6 +5,10 @@ permalink: /docs/api/transports/
 
 ## transports
 
+__All__ the transports registered with the Service are considered with
+ these endpoints.
+
+
 ```
 GET /transports
 ```
