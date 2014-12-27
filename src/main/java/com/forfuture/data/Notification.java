@@ -1,5 +1,9 @@
 package com.forfuture.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.Date;
 
 /**
@@ -12,6 +16,8 @@ import java.util.Date;
 
 public class Notification {
     private int id;
+
+    @JsonIgnore
     private Route route;
     //private Date date;
 
@@ -22,4 +28,7 @@ public class Notification {
 
     public int getId() { return id; }
     public Route getRoute() { return route; }
+
+    @JsonProperty("routeId")
+    public int getRouteId() { return route.getId(); }
 }
