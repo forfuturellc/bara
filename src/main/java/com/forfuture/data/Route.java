@@ -11,11 +11,18 @@ import java.util.Collection;
  *  1:N - Transporters
  */
 
+import com.forfuture.data.transport.Transport;
+import com.forfuture.data.user.User;
+
 public interface Route {
-    int id = null;
-    String origin = null;
-    String destination = null;
-    Country country;
-    Transport transport;
-    Collection<User> transporters;
+    String getId();
+    String getCode();
+    String setCode();
+    String getOrigin();
+    String setOrigin();
+    String getDestination();
+    String setDestination();
+    Country getCountry();
+    Transport getTransport();
+    Collection<User> getTransporters();
 }

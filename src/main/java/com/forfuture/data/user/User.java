@@ -8,6 +8,6 @@ package com.forfuture.data.user;
 
 
 public abstract interface User {
-    int id;
-    String email;
+    int getId();
+    String getEmail();
 }

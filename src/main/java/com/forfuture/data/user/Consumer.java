@@ -5,7 +5,6 @@ package com.forfuture.data.user;
  */
 
 
-public interface Consumer implements User {
-    Integer id = null;
-    String name = null;
+public interface Consumer extends User {
+    String getName();
 }

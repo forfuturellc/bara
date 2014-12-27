@@ -5,7 +5,7 @@ package com.forfuture.data.user;
  */
 
 
-public interface Provider implements User {
-    Integer id = null;
-    String name = null;
+public interface Provider extends User {
+    String getName();
+    String setName();
 }
