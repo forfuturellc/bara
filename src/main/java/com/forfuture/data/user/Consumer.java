@@ -1,11 +1,11 @@
-package com.forfuture.data;
+package com.forfuture.data.user;
 
 /**
- * Created by gocho on 12/23/14.
- *
  * A Consumer is an entity that utilizes the service
  */
-public interface Consumer {
+
+
+public interface Consumer implements User {
     Integer id = null;
     String name = null;
 }
