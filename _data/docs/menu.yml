@@ -1,0 +1,17 @@
+
+start:
+  title: Getting Started
+  prefix: '/docs/'
+  links:
+    - introduction
+    - architecture
+
+api:
+  title: API
+  prefix: '/docs/api/'
+  links:
+    - countries
+    - notifications
+    - routes
+    - transports
+    - users

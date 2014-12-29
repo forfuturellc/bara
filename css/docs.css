@@ -1,0 +1,18 @@
+.accordion, .sub-menu {
+  padding: 0;
+  list-style: none;
+}
+
+.accordion span {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sub-menu {
+  display: none;
+  padding-left: 8px;
+}
+
+.accordion li:hover > .sub-menu {
+  display: block;
+}
