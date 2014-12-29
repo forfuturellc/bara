@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Architecture
 permalink: /docs/architecture/
 ---
