@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.forfuture.data.Notification;
 import com.forfuture.data.transport.RoadTransport;
 import com.forfuture.data.transport.Transport;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,8 @@ import java.util.HashMap;
 public class CountryController {
     private ObjectMapper mapper = new ObjectMapper();
 
-    @RequestMapping(value = "/country/{countryName}/routes", method = RequestMethod.GET)
+    @RequestMapping(value = "/country/{countryName}/routes",
+            method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     String getRoutes() {
         HashMap<String, ArrayList<Route>> response = new HashMap<String, ArrayList<Route>>();
         ArrayList<Route> routes = new ArrayList<Route>();
@@ -38,7 +40,8 @@ public class CountryController {
         }
     }
 
-    @RequestMapping(value = "/country/{countryName}/transports", method = RequestMethod.GET)
+    @RequestMapping(value = "/country/{countryName}/transports",
+            method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     String getTransports() {
         HashMap<String, ArrayList<Transport>> response = new HashMap<String, ArrayList<Transport>>();
         ArrayList<Transport> transports = new ArrayList<Transport>();
@@ -51,7 +54,8 @@ public class CountryController {
         }
     }
 
-    @RequestMapping(value = "/country/{countryName}/notifications", method = RequestMethod.GET)
+    @RequestMapping(value = "/country/{countryName}/notifications",
+            method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     String getNotifications() {
         HashMap<String, ArrayList<Notification>> response = new HashMap<String, ArrayList<Notification>>();
         ArrayList<Notification> notifications = new ArrayList<Notification>();

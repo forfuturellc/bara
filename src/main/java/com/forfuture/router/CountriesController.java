@@ -7,6 +7,7 @@ package com.forfuture.router;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.forfuture.data.Country;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +18,8 @@ import java.util.HashMap;
 @RestController
 public class CountriesController {
 
-    @RequestMapping(value = "/countries", method = RequestMethod.GET)
+    @RequestMapping(value = "/countries",
+            method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     String getCountries() {
         ObjectMapper mapper = new ObjectMapper();
         Country kenya = new Country(1, "Kenya");
