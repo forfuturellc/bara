@@ -12,14 +12,11 @@ import com.forfuture.data.transport.RoadTransport;
 import com.forfuture.data.transport.Transport;
 import com.forfuture.data.user.User;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import com.forfuture.data.Route;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 
 @RestController
@@ -33,7 +30,7 @@ public class CountryController {
 
     @RequestMapping(value = "/country/{countryName}/routes",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getRoutes() {
+    String getRoutes(@PathVariable String countryName, @RequestParam("transport") String transport) {
         HashMap<String, ArrayList<Route>> response = new HashMap<String, ArrayList<Route>>();
         ArrayList<Route> routes = new ArrayList<Route>();
         routes.add(rongai);
@@ -48,7 +45,7 @@ public class CountryController {
 
     @RequestMapping(value = "/country/{countryName}/transports",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getTransports() {
+    String getTransports(@PathVariable String countryName) {
         HashMap<String, ArrayList<Transport>> response = new HashMap<String, ArrayList<Transport>>();
         ArrayList<Transport> transports = new ArrayList<Transport>();
         transports.add(RoadTransport.getInstance());
@@ -62,7 +59,7 @@ public class CountryController {
 
     @RequestMapping(value = "/country/{countryName}/notifications",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getNotifications() {
+    String getNotifications(@PathVariable String countryName, @RequestParam("transport") String transport) {
         HashMap<String, ArrayList<Notification>> response = new HashMap<String, ArrayList<Notification>>();
         ArrayList<Notification> notifications = new ArrayList<Notification>();
         Notification notification1 = new Notification(1, Notification.NotificationType.Accident, rongai, gocho, "accident near strathmore");
@@ -75,5 +72,17 @@ public class CountryController {
         } catch (JsonProcessingException error) {
             return error.toString();
         }
+    }
+
+    @RequestMapping(value = "/country/{countryName}/{transportName}/routes",
+            method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    String getCountryRoutes(@PathVariable String countryName, @PathVariable String transportName) {
+        return getRoutes(countryName, transportName);
+    }
+
+    @RequestMapping(value = "/country/{countryName}/{transportName}/notifications",
+            method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    String getCountryNotifications(@PathVariable String countryName, @PathVariable String transportName) {
+        return getNotifications(countryName, transportName);
     }
 }
