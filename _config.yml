@@ -7,6 +7,8 @@ github_username:  forfuture-dev
 repository_name: bara
 repository_url: https://github.com/forfuture-dev/bara
 
+# Render Settings
+baseurl: /bara
 
 # Build settings
 markdown: kramdown
