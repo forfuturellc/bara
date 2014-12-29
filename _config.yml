@@ -4,9 +4,14 @@ email: we@forfuture.co.ke
 description: >
   A Transport Notification Service.
 github_username:  forfuture-dev
+repository_name: bara
+repository_url: https://github.com/forfuture-dev/bara
+
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 highlighter: pygments
 collections:
   docs:
