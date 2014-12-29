@@ -2,8 +2,7 @@ package com.forfuture.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.forfuture.data.Route;
+import com.forfuture.data.user.User;
 
 import java.util.Date;
 
@@ -19,6 +18,7 @@ public class Notification {
     private int id;
     private Date date;
     private NotificationType type;
+    private User user;
     private String message;
     private int votes = 0;
 
@@ -28,17 +28,20 @@ public class Notification {
     private Route route;
 
 
-    public Notification(int id, Date date,
+    public Notification(int id,
                         NotificationType type, Route route,
-                        String message) {
+                        User user, String message) {
         this.id = id;
-        this.date = date;
+        this.date =  new Date();
         this.type = type;
         this.route = route;
+        this.user = user;
         this.message = message;
     }
 
     public int getId() { return id; }
+
+    public Date getDate() { return date; }
 
     public int getVotes() { return votes; }
     public int incrementVotes() { return ++votes; }
@@ -57,4 +60,13 @@ public class Notification {
 
     @JsonProperty("type")
     public NotificationType getType() { return type; }
+
+    @JsonIgnore
+    public User getUser() { return user; }
+
+    @JsonProperty("userId")
+    public int getUserId() { return user.getId(); }
+
+    @JsonProperty("username")
+    public String getUsername() { return user.getUsername(); }
 }

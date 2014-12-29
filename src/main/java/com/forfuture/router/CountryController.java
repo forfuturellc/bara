@@ -10,6 +10,7 @@ import com.forfuture.data.Country;
 import com.forfuture.data.Notification;
 import com.forfuture.data.transport.RoadTransport;
 import com.forfuture.data.transport.Transport;
+import com.forfuture.data.user.User;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,8 @@ public class CountryController {
     Country kenya = new Country(1, "kenya");
     Route rongai = new Route(1, "125", "nairobi", "rongai", kenya,  RoadTransport.getInstance());
     Route juja = new Route(2, "1008", "juja", "nairobi", kenya, RoadTransport.getInstance());
+    User gocho = new User(1, "gocho", "mugo@forfuture.co.ke");
+    User james = new User(2, "james", "james@ncece.co.ke");
 
     @RequestMapping(value = "/country/{countryName}/routes",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -62,8 +65,8 @@ public class CountryController {
     String getNotifications() {
         HashMap<String, ArrayList<Notification>> response = new HashMap<String, ArrayList<Notification>>();
         ArrayList<Notification> notifications = new ArrayList<Notification>();
-        Notification notification1 = new Notification(1, new Date(), Notification.NotificationType.Accident, rongai, "accident near strathmore");
-        Notification notification2 = new Notification(2, new Date(), Notification.NotificationType.TrafficJam, rongai, "jam at KU");
+        Notification notification1 = new Notification(1, Notification.NotificationType.Accident, rongai, gocho, "accident near strathmore");
+        Notification notification2 = new Notification(2, Notification.NotificationType.TrafficJam, rongai, james, "jam at KU");
         notifications.add(notification1);
         notifications.add(notification2);
         response.put("notifications", notifications);
