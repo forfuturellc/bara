@@ -22,9 +22,15 @@ public class Route {
     private Country country;
     private Transport transport;
 
-    public Route(int id, String code) {
+    public Route(int id, String code,
+                 String origin, String destination,
+                 Country country, Transport transport) {
         this.id = id;
         this.code = code;
+        this.origin = origin;
+        this.destination = destination;
+        this.country = country;
+        this.transport = transport;
     }
 
     public int getId() { return id; }
