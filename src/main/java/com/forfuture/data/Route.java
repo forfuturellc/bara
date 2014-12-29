@@ -1,7 +1,5 @@
 package com.forfuture.data;
 
-import java.util.Collection;
-
 /**
  * A Route is a A-B path in a transport system. This is implemented by all
  * routes.
@@ -9,26 +7,31 @@ import java.util.Collection;
  *  N:1 - Country
  *  1:1 - Transport
  *  1:N - Transporters
+ *  What makes routes unique?
+ *  - code
+ *  - pointA-pointB combination
  */
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.forfuture.data.transport.Transport;
-import com.forfuture.data.user.User;
+
+import java.util.ArrayList;
 
 public class Route {
     private int id;
     private String code;
-    private String origin;
-    private String destination;
+    private String pointA;
+    private String pointB;
     private Country country;
     private Transport transport;
 
     public Route(int id, String code,
-                 String origin, String destination,
+                 String pointA, String pointB,
                  Country country, Transport transport) {
         this.id = id;
         this.code = code;
-        this.origin = origin;
-        this.destination = destination;
+        this.pointA = pointA;
+        this.pointB = pointB;
         this.country = country;
         this.transport = transport;
     }
@@ -39,16 +42,15 @@ public class Route {
         this.code = code;
         return code;
     }
-    public String getOrigin() { return origin; }
-    public String setOrigin(String origin) {
-        this.origin = origin;
-        return origin;
+
+    @JsonProperty("points")
+    public ArrayList<String> getPoints() {
+        ArrayList<String> points = new ArrayList<String>();
+        points.add(pointA);
+        points.add(pointB);
+        return points;
     }
-    public String getDestination() { return destination; }
-    public String setDestination(String destination) {
-        this.destination = destination;
-        return  destination;
-    }
+
     public Country getCountry() { return country; }
     public Transport getTransport() { return transport; }
 }
