@@ -35,6 +35,7 @@ public class Notification {
         this.date = date;
         this.type = type;
         this.route = route;
+        this.message = message;
     }
 
     public int getId() { return id; }

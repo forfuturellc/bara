@@ -25,8 +25,8 @@ import java.util.HashMap;
 public class CountryController {
     private ObjectMapper mapper = new ObjectMapper();
     Country kenya = new Country(1, "kenya");
-    Route rongai = new Route(1, "125", "nairobi", "rongai", kenya,  new RoadTransport());
-    Route juja = new Route(2, "1008", "juja", "nairobi", kenya, new RoadTransport());
+    Route rongai = new Route(1, "125", "nairobi", "rongai", kenya,  RoadTransport.getInstance());
+    Route juja = new Route(2, "1008", "juja", "nairobi", kenya, RoadTransport.getInstance());
 
     @RequestMapping(value = "/country/{countryName}/routes",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,7 +48,7 @@ public class CountryController {
     String getTransports() {
         HashMap<String, ArrayList<Transport>> response = new HashMap<String, ArrayList<Transport>>();
         ArrayList<Transport> transports = new ArrayList<Transport>();
-        transports.add(new RoadTransport());
+        transports.add(RoadTransport.getInstance());
         response.put("transports", transports);
         try {
             return mapper.writeValueAsString(response);
