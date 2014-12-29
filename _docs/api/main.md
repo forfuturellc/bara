@@ -21,3 +21,16 @@ permalink: /docs/api/
  that in or near their geographical location. For now `countryName` is
  as specific as it can get. For example, `GET /kenya/routes` would be
  useful to people living in Kenya.
+
+* __data readability__. The response bodies are returned in JSON format
+ to allow the data to be easily read by both machines and humans. The
+ data may be used in client applications such as [naijav][naijav].
+
+
+## conclusion
+
+Please note that the API is under disussion and heavy development. It is
+ best to assume that anything and everything will change.
+
+
+[naijav]:https://github.com/forfuture-dev/naijav
