@@ -1,8 +1,13 @@
-# site build directory
+# site build directory, by jekyll
 _site/
 
-# sass cache
+# sass cache, by sass
 .sass-cache/
 
 # IntelliJ idea configuration files
 .idea
+
+# artifacts (such as build output from java) left in working directory
+# when switching branches
+target/
+webapps/
