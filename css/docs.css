@@ -3,9 +3,22 @@
   list-style: none;
 }
 
+.accordion {
+  height: 100%;
+  overflow: hidden;
+}
+
 .accordion span {
   font-weight: bold;
   cursor: pointer;
+}
+
+.accordion li {
+  margin-top: 1px;
+}
+
+.accordion li:hover > .sub-menu {
+  display: block;
 }
 
 .sub-menu {
@@ -13,6 +26,14 @@
   padding-left: 8px;
 }
 
-.accordion li:hover > .sub-menu {
+.sub-menu a {
+  width: 100%;
+  padding: 4px;
   display: block;
+}
+
+.sub-menu li:hover a {
+  background: #E0E0E0;
+  border-radius: 4px;
+  padding-left: 12px;
 }
