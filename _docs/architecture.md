@@ -7,17 +7,17 @@ permalink: /docs/architecture/
 
 # Architecture
 
-This document offers architecture information about TNS.
+This document offers architecture information about the Service.
 
 
 ## Components
 
 A summary of all the major components of the Service include:
 
-* Aggregator: Collects and aggregates data from external sources
-* Assembler: Handles data formatting
-* Cache: caches data
-* Computation Engine: analyse and manipulate data
-* Database: handle data storage and persistence
-* Query Engine: maps request
-* Router: handle exchange of data between clients and server
+* __Aggregator__: Collects and aggregates data from external sources
+* __Assembler__: Handles data formatting
+* __Cache__: caches data
+* __Computation Engine__: analyse and manipulate data
+* __Database__: handle data storage and persistence
+* __Query Engine__: maps request
+* __Router__: handle exchange of data between clients and server

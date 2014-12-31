@@ -27,6 +27,14 @@ permalink: /docs/api/
  data may be used in client applications such as [naijav][naijav].
 
 
+## conventions
+
+
+* `{countryName}` is a placeholder variable for name of the country. E.g. 
+ kenya
+* `{transportName}` is a placeholder variable for a transport type. E.g. road
+
+
 ## conclusion
 
 Please note that the API is under disussion and heavy development. It is

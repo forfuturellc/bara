@@ -6,12 +6,13 @@ permalink: /docs/api/notifications/
 ## Notifications
 
 
-## summary of APIs
+### summary
 
 |URI|Http Method|Resource|
 |---|:---:|-----|
 |/country/{countryName}/notifications|GET|notifications|
 |/country/{countryName}/{transportName}/notifications|GET|notifications|
+
 
 ### general
 

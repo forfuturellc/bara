@@ -6,7 +6,7 @@ permalink: /docs/introduction/
 
 # Introduction
 
-Transport Notification Service (TNS) is a web service that offers public data
+Bara is a Transport Notification Service (TNS) that offers public data
  concerning transport routes.
 
 The service consumes user-generated relevant data. This data may further
