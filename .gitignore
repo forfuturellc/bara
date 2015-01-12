@@ -7,3 +7,7 @@ webapps/*
 # IntelliJ IDEA specific files/directories
 .idea/
 *.iml
+
+# untracked content from other branches
+.sass-cache/
+_site/
