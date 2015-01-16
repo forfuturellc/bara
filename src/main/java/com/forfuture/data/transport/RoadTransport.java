@@ -1,10 +1,11 @@
 package com.forfuture.data.transport;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 /**
  * Road Transport
  */
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 public class RoadTransport implements Transport {
     private int id;

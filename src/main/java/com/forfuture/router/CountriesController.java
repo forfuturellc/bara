@@ -4,16 +4,19 @@ package com.forfuture.router;
  * API endpoint "/countries/"
  */
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.forfuture.data.Country;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.forfuture.data.Country;
+
 
 @RestController
 public class CountriesController {

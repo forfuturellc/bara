@@ -1,11 +1,5 @@
 package com.forfuture.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.forfuture.data.user.User;
-
-import java.util.Date;
-
 /**
  * A Notification is an event viewed by service consumers.
  * A notification is tied to a single route i.e. where the event occurred.
@@ -13,6 +7,14 @@ import java.util.Date;
  * Notification have N:1 relationship with Routes, N:1 relationship with
  * Providers
  */
+
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import com.forfuture.data.user.User;
+
 
 public class Notification {
     private int id;

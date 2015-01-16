@@ -12,10 +12,12 @@ package com.forfuture.data;
  *  - pointA-pointB combination
  */
 
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import com.forfuture.data.transport.Transport;
 
-import java.util.ArrayList;
 
 public class Route {
     private int id;
