@@ -7,7 +7,6 @@ package com.forfuture.router;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.http.MediaType;
@@ -32,36 +31,30 @@ public class CountryController {
 
     @RequestMapping(value = "/country/{countryName}/routes",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getRoutes(@PathVariable String countryName, @RequestParam("transport") String transport) {
+    public HashMap<String, ArrayList<Route>> getRoutes(@PathVariable String countryName,
+            @RequestParam("transport") String transport) {
         HashMap<String, ArrayList<Route>> response = new HashMap<String, ArrayList<Route>>();
         ArrayList<Route> routes = new ArrayList<Route>();
         routes.add(rongai);
         routes.add(juja);
         response.put("routes", routes);
-        try {
-            return mapper.writeValueAsString(response);
-        } catch (JsonProcessingException error) {
-            return error.toString();
-        }
+        return response;
     }
 
     @RequestMapping(value = "/country/{countryName}/transports",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getTransports(@PathVariable String countryName) {
+    public HashMap<String, ArrayList<Transport>> getTransports(@PathVariable String countryName) {
         HashMap<String, ArrayList<Transport>> response = new HashMap<String, ArrayList<Transport>>();
         ArrayList<Transport> transports = new ArrayList<Transport>();
         transports.add(RoadTransport.getInstance());
         response.put("transports", transports);
-        try {
-            return mapper.writeValueAsString(response);
-        } catch (JsonProcessingException error) {
-            return error.toString();
-        }
+        return response;
     }
 
     @RequestMapping(value = "/country/{countryName}/notifications",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getNotifications(@PathVariable String countryName, @RequestParam("transport") String transport) {
+    public HashMap<String, ArrayList<Notification>> getNotifications(@PathVariable String countryName,
+            @RequestParam("transport") String transport) {
         HashMap<String, ArrayList<Notification>> response = new HashMap<String, ArrayList<Notification>>();
         ArrayList<Notification> notifications = new ArrayList<Notification>();
         Notification notification1 = new Notification(1, Notification.NotificationType.Accident, rongai, gocho, "accident near strathmore");
@@ -69,22 +62,20 @@ public class CountryController {
         notifications.add(notification1);
         notifications.add(notification2);
         response.put("notifications", notifications);
-        try {
-            return mapper.writeValueAsString(response);
-        } catch (JsonProcessingException error) {
-            return error.toString();
-        }
+        return response;
     }
 
     @RequestMapping(value = "/country/{countryName}/{transportName}/routes",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getCountryRoutes(@PathVariable String countryName, @PathVariable String transportName) {
+    public HashMap<String, ArrayList<Route>> getCountryRoutes(@PathVariable String countryName,
+            @PathVariable String transportName) {
         return getRoutes(countryName, transportName);
     }
 
     @RequestMapping(value = "/country/{countryName}/{transportName}/notifications",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    String getCountryNotifications(@PathVariable String countryName, @PathVariable String transportName) {
+    public HashMap<String, ArrayList<Notification>> getCountryNotifications(@PathVariable String countryName,
+            @PathVariable String transportName) {
         return getNotifications(countryName, transportName);
     }
 }
