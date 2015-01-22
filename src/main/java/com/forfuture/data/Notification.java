@@ -46,8 +46,8 @@ public class Notification {
     public Date getDate() { return date; }
 
     public int getVotes() { return votes; }
-    public int incrementVotes() { return ++votes; }
-    public int decrementVotes() { return --votes; }
+    public int voteUp() { return ++votes; }
+    public int voteDown() { return --votes; }
 
     public String getMessage() { return message; }
 
