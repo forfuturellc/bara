@@ -2,9 +2,7 @@ package com.forfuture.router;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -24,7 +22,6 @@ public class NotificationControllerTest {
     public void getAllNotifications() {
       given().
         standaloneSetup(new NotificationController()).
-        param("name", "Johan").
       when().
         get("/notifications").
       then()

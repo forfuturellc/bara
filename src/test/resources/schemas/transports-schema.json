@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "title": "An Array of Notifications",
+  "title": "An Array of Transports",
   "type": "object",
   "properties": {
-    "notifications": {
+    "transports": {
       "type": "array",
-      "items": { "$ref": "notification-schema.json#" }
+      "items": { "$ref": "transport-schema.json#" }
     }
   }
 }

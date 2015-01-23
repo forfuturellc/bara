@@ -67,14 +67,14 @@ public class CountryController {
 
     @RequestMapping(value = "/country/{countryName}/{transportName}/routes",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public HashMap<String, ArrayList<Route>> getCountryRoutes(@PathVariable String countryName,
+    public HashMap<String, ArrayList<Route>> getTransportRoutes(@PathVariable String countryName,
             @PathVariable String transportName) {
         return getRoutes(countryName, transportName);
     }
 
     @RequestMapping(value = "/country/{countryName}/{transportName}/notifications",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public HashMap<String, ArrayList<Notification>> getCountryNotifications(@PathVariable String countryName,
+    public HashMap<String, ArrayList<Notification>> getTransportNotifications(@PathVariable String countryName,
             @PathVariable String transportName) {
         return getNotifications(countryName, transportName);
     }

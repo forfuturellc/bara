@@ -14,6 +14,7 @@ package com.forfuture.data;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import com.forfuture.data.transport.Transport;
@@ -53,6 +54,15 @@ public class Route {
         return points;
     }
 
+    @JsonIgnore
     public Country getCountry() { return country; }
+
+    @JsonProperty("countryId")
+    public int getCountryId() { return country.getId(); }
+
+    @JsonIgnore
     public Transport getTransport() { return transport; }
+
+    @JsonProperty("transport")
+    public String getTransportName() { return transport.getName(); }
 }

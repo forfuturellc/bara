@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -28,10 +29,12 @@ public class NotificationController {
     Notification notification2 = new Notification(2, Notification.NotificationType.TrafficJam, route1,user1 , "traffic jam globe roundabout");
 
     @RequestMapping(value = "/notifications", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ArrayList<Notification> getAllNotifications() {
+    public HashMap<String, ArrayList<Notification>> getAllNotifications() {
+        HashMap<String, ArrayList<Notification>> response = new HashMap<String, ArrayList<Notification>>();
         ArrayList<Notification> notifications = new ArrayList<Notification>();
         notifications.add(notification1);
         notifications.add(notification2);
-        return notifications;
+        response.put("notifications", notifications);
+        return response;
     }
 }
